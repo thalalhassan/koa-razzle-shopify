@@ -1,0 +1,60 @@
+.ministatscard{
+    padding: 25px 30px 25px 8px;
+    display: flex;
+    margin: 0 0 20px;
+}
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+}
+.leftsect{
+    width: auto;
+}
+.rightsect{
+    width: calc(100% - 84px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3{
+        font-size: 12px;
+        color: rgba(33, 43, 54, 0.75);
+        line-height: 14px;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 0;
+    }
+    h4{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #212B36;
+        margin: 0;
+        margin-top: 8px;
+    }
+    h5{
+        margin: 0;
+        margin-top: 8px;
+    }
+    .text{
+        font-size: 12px;
+        color: rgba(33, 43, 54, 0.45);
+        font-weight: 400;
+        line-height: 14px;
+    }
+    .percentinc{
+        font-size: 12px;
+        color: #50B83C;
+        font-weight: 400;
+        line-height: 14px;
+    }
+    .percentdec{
+        font-size: 12px;
+        color: #FF0000;
+        font-weight: 400;
+        line-height: 14px;
+    }
+    .arro{
+        margin: 0 4px;
+    }
+}

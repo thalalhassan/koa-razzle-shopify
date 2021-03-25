@@ -1,0 +1,28 @@
+.sectionone{
+   h2{
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #000000;
+   }
+}
+.sectiontwo{
+    margin-top: 30px;
+    display: flex;
+}
+.leftsect{
+    width: 198px;
+    background:#F8F9FA;
+
+     min-height: 556px;
+
+}
+.ritsect{
+    width: calc(100% - 198px);
+    padding: 42px;
+    background: #FFFFFF;
+       min-height: 100%;
+       @media(min-width:1024px){
+        width: calc(90% - 198px);
+       }
+}

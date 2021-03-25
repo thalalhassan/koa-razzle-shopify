@@ -1,0 +1,54 @@
+.container{
+    display: block;
+    width: 100%;
+}
+
+.sectionone{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(33, 43, 54, 0.05);
+}
+.links{
+    margin: 0;
+    padding: 0;
+    li{
+        display: inline-block;
+        a{
+            padding: 17px 15px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(33, 43, 54, 0.45);
+            text-decoration: none;
+            display: inline-block;
+        }
+        &.active{
+            a{
+                color: #5063FF;
+                position: relative;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #5063FF;
+                }
+            }
+        }
+    }
+}
+.btnsect{
+    transform: translateY(-15px);
+}
+.loadingicon{
+    width: 50px;
+    margin: 50px auto;
+    svg{
+        width: 100%;
+    }
+}

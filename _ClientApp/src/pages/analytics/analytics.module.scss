@@ -1,0 +1,126 @@
+
+.main{
+    display: block;
+    width: 100%;
+}
+.ml2{
+    margin-left: 5px;
+}
+.sectiontitle{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    h2 {
+        font-size: 24px;
+        color: #000000;
+        line-height: 40px;
+        font-weight: 400;
+        margin: 0;
+        width: 100%;
+    }
+}
+.sectiontitlerit{
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+        width: 120px;
+    }
+    button {
+        margin: 0;
+    }
+}
+.sectiontwo{
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+    .colone{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        @media(min-width:1024px){
+            width: 65%;
+        }
+    }
+    .coltwo{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        width:100%;
+        @media(min-width:768px){
+            width:50%;
+        }
+        @media(min-width:1024px){
+            width:35%;
+        }
+    }
+    .coloneb{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        @media(min-width:768px){
+            width:50%;
+        }
+        @media(min-width:1024px){
+            width:35%;
+        }
+    }
+    .coltwob{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        width:100%;
+        @media(min-width:1024px){
+            width:65%;
+        }
+    }
+
+
+
+    .colc{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        @media(min-width:768px){
+            width: calc(100% / 2);
+            &:last-child {
+                width: 100%;
+            } 
+        }
+        @media(min-width:1024px){
+            width: calc(100% / 3);
+            &:last-child {
+                width: calc(100% / 3);
+            } 
+        }
+    }
+}
+:global(.my-masonry-grid) {
+    display: flex;
+    margin: 0 -10px 0px;
+    flex-wrap: wrap;
+}
+:global(.my-masonry-grid_column) {
+    padding: 0 10px;
+}
+@media (min-width: 500px) {
+    .sectiontitle{
+        margin-bottom: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+        h2 {
+            width: auto;
+        }
+    }
+}
+
+.updatedInfo {
+    font-size: 12px;
+    margin-top: 1px;
+    color: #888181;
+    margin-left: 18px;
+    text-transform: capitalize;
+}
+.updatedInfoDiv {
+    position: absolute;
+}

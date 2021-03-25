@@ -1,0 +1,72 @@
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    width: 100%;
+}
+.titlesect{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    .title{
+        color: #212B36;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    a{
+        font-size: 14px;
+        line-height: 16px;
+        text-decoration: none;
+        color: rgba(33, 43, 54, 0.75);
+        font-weight: 400;
+    }
+}
+.calculations{
+    display: flex;
+    margin-bottom: 24px;
+    padding: 0 30px;
+    .amount{
+        width: 100px;
+        margin-right: 40px;
+        h4{
+            margin: 0;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 400;
+            color: rgba(33, 43, 54, 0.55);
+            margin-bottom: 5px;
+        }
+        h5{
+            margin: 0;
+            color: #5063FF;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+    .period{
+        h4{
+            margin: 0;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 400;
+            color: rgba(33, 43, 54, 0.65);
+            margin-bottom: 5px;
+        }
+        h5{
+            width: 100px;
+            margin: 0;
+            color: #5063FF;
+            font-weight: 500;
+            font-size: 22px;
+            color: rgba(33, 43, 54, 0.65);
+        }
+    }
+}
+.chart{
+    padding:15px 24px;
+}

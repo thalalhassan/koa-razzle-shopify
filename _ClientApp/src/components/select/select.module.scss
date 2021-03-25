@@ -1,0 +1,22 @@
+.label{
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #212B36;
+}
+.error{
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+}
+.container{
+    position: relative;
+    z-index: 5;
+}
+.indicatorContainer {
+    padding: 0px !important;
+}

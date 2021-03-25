@@ -1,0 +1,19 @@
+.checklabel{
+    cursor: pointer;
+    input{
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    font-size: 14px;
+    line-height: 17px;
+    color: #212B36;
+    font-weight: 400;
+    display: inline-block;
+    i{
+        margin-right: 11px;
+        display: inline-flex;
+    vertical-align: middle;
+    }
+}

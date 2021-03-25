@@ -1,0 +1,12 @@
+image: alpine
+
+stages:
+  - install
+  - build
+  - test
+  - deploy
+
+include:
+  - '.gitlab/dev/ci.yml'
+  - '.gitlab/demo/ci.yml'
+  - '.gitlab/prod/ci.yml'

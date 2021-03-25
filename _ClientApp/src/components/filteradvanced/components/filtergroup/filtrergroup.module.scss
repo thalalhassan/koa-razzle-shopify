@@ -1,0 +1,58 @@
+.advancedfilter{
+    background: #FAFBFC;
+    padding: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    z-index: 1;
+    position: relative;
+}
+.btnsingl{
+    text-align: right;
+    margin-left: 10px;
+    display: inline-block;
+}
+.sectbtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.sectfilter{
+    margin-top: 34px;
+    position: relative;
+    padding-left: 18px;
+    &:before{
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: calc(50% + 57px);
+        top: -57px;
+        left: 2px;
+        border: 1.5px solid #5063FF;
+        border-width: 0 0 2px 2px;
+        border-radius: 3px;
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 50%;
+        top: 50%;
+        left: 2px;
+        border: 1.5px solid #5063FF;
+        border-width: 0 0 0 2px;
+
+    }
+    &:last-child{
+        &:after{
+          display: none;  
+        }
+    }
+}
+.deletegroup{
+    width: 20px;
+    cursor: pointer;
+}
+.adv_opt {
+    display: flex;
+    align-items: center;
+}

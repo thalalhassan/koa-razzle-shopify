@@ -1,0 +1,62 @@
+.container h3{
+    font-size: 18px;
+    line-height: 21px;
+    color: #212B36;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 32px;
+}
+.errortext {
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    color: red;
+    line-height: 60px;
+  }
+.container h4{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(33, 43, 54, 0.45);
+    margin: 0;
+    margin-bottom: 24px;
+}
+.row{
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn{
+     margin-left: 16px;
+     display: inline-block;
+     margin-bottom: 15px;
+}
+.leftsect{
+    h5{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: #212B36;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    h6{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        color: rgba(33, 43, 54, 0.45);
+        margin: 0;
+        margin-bottom: 8px;
+
+    }
+    p{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #212B36;
+    }
+}
+.rightsect{
+    text-align: right;
+}

@@ -1,0 +1,84 @@
+.accodContainer{
+    .title{
+        background: #000;
+        color: #fff;
+    }
+    .content{
+        border:1px solid #000;
+    }
+}
+.contentshow{
+    display: block;
+}
+.contenthide{
+    display: none;
+}
+.accordion {
+    width: 100%;
+    max-width: 470px;
+  }
+  .panel {
+    background-color: #fff;
+  }
+  .panel__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 60px 12px 30px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212B36;
+    line-height: 17px;
+    font-family: inherit;
+    -webkit-transition: color 0.2s linear;
+    transition: color 0.2s linear;
+    cursor: pointer;
+  }
+  .panel__label:focus {
+    outline: none;
+  }
+  .panel__label:before {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 16px;
+    width: 13px;
+    height: 10px;
+    margin-top: 0;
+    background: url(/images/accordianarroup.svg) no-repeat;
+  }
+
+  .panel[aria-expanded='true'] .panel__content {
+    opacity: 1;
+  }
+  .panel[aria-expanded='true'] .panel__label:before {
+    background: url(/images/accordianarrodown.svg) no-repeat;
+  }
+  .panel__inner {
+    overflow: hidden;
+    will-change: height;
+    -webkit-transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  .panel__content {
+    margin: 0;
+    padding: 20px 35px 20px 30px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    background: rgba(245, 246, 248, 0.94);
+    opacity: 0;
+    -webkit-transition: opacity 0.3s linear 0.18s;
+    transition: opacity 0.3s linear 0.18s;
+  }
+  .panel:not(:last-child) {
+    margin-bottom: 3px;
+  }
+  .checkboxcontainer{
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }

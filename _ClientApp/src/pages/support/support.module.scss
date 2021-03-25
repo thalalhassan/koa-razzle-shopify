@@ -1,0 +1,44 @@
+.sectionone{
+    h2{
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #000000;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}
+.row{
+    margin: 0 -16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    padding: 0 16px;
+    width: calc(100% / 2);
+    margin-bottom: 32px;
+    @media(min-width:992px){
+        width: calc(100% / 3);
+
+    }
+}
+.sectiontwo{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+    padding: 60px;
+    h3{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: #212B36;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    .sectacodian{
+        width: 100%;
+        max-width: 570px;
+        margin: 0 auto;
+    }
+}

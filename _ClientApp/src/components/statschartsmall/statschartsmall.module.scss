@@ -1,0 +1,65 @@
+.chartcontainer{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.data{
+    padding: 25px 25px 0 25px;
+    h3{
+        font-size: 22px;color: #212B36;
+        line-height: 26px;
+        font-weight: 500;
+        margin: 0;
+    }
+    h4{
+        color: rgba(33, 43, 54, 0.75);
+        font-size: 12px;
+        line-height: 14px;      
+        font-weight: 400;
+        margin: 0;
+        margin-top: 4px;
+        display: flex;
+    }
+    .percent{
+        color: #50B83C;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        &.down{
+            color:red;
+        }
+    }
+   
+   
+    
+}
+.selected{
+    h3{
+        color:#fff;
+    }
+    h4{
+        color:#fff;
+    }
+    .percent{
+        color:#fff;
+        &.down{
+            color:#fff;
+        }
+    }
+}
+.grpahical{
+    width: 100%;
+    // width: calc(100% + 22px);
+    transform: translateY(13px);
+    svg {
+        transform: translate(0, 0) !important;
+    }
+}
+.arrow{
+    margin: 0 5px;
+}
