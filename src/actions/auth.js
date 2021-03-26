@@ -1,9 +1,10 @@
-import axios from "axios";
-import jwtDecode from "jwt-decode";
-import { setLocalStorageData, parseJson } from "../helper";
-import Cookies from "js-cookie";
-import setAuthToken from "../setAuthToken";
-import { Actions } from "./types";
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
+import { setLocalStorageData } from 'helper';
+import Cookies from 'js-cookie';
+import setAuthToken from '../setAuthToken';
+import { Actions } from './types';
+import { parseJson } from '../helper';
 
 export const setCurrentUser = (decoded) => ({
   type: Actions.SET_CURRENT_USER,
@@ -11,50 +12,45 @@ export const setCurrentUser = (decoded) => ({
 });
 
 export const loginUser = (user) => (dispatch) => {
-
-  console.log({user});
-
-  dispatch(setCurrentUser(user));
-
-  // axios
-  //   .post("/auth/login", user)
-  //   .then((res) => {
-  //     const { token, syncStatus, reactourStatus } = res.data._data;
-  //     setLocalStorageData({
-  //       jwtToken: token,
-  //       syncStatus,
-  //       reactourStatus: parseJson(reactourStatus),
-  //     });
-  //     setAuthToken(token);
-  //     const decoded = jwtDecode(token);
-  //     dispatch(setCurrentUser(decoded));
-  //   })
-  //   .catch((err) => {
-  //     dispatch({
-  //       type: Actions.GET_AUTH_ERRORS,
-  //       payload: err.response?.data,
-  //     });
-  //   });
+  axios
+    .post('/auth/login', user)
+    .then((res) => {
+      const { token, syncStatus, reactourStatus } = res.data._data;
+      setLocalStorageData({
+        jwtToken: token,
+        syncStatus,
+        reactourStatus: parseJson(reactourStatus),
+      });
+      setAuthToken(token);
+      const decoded = jwtDecode(token);
+      dispatch(setCurrentUser(decoded));
+    })
+    .catch((err) => {
+      dispatch({
+        type: Actions.GET_AUTH_ERRORS,
+        payload: err.response?.data,
+      });
+    });
 };
 
 export const logoutUser = () => (dispatch) => {
-  const shopOrigin = Cookies.get("shopOrigin");
+  const shopOrigin = Cookies.get('shopOrigin');
   try {
     localStorage.removeItem(shopOrigin);
     // Cookies.set(shopOrigin, setData);
   } catch (error) {
-    console.log("cant access localstorage");
+    console.log('cant access localstorage');
   }
   setAuthToken(false);
   dispatch(setCurrentUser({}));
-  window.location = "/login";
+  window.location = '/login';
 };
 
 export const resetPassword = ({ token, id, password }) => (dispatch) => {
   axios
-    .post("/auth/resetPassword", { token, id, password })
+    .post('/auth/resetPassword', { token, id, password })
     .then(() => {
-      window.location = "/login";
+      window.location = '/login';
     })
     .catch((err) => {
       dispatch({
@@ -68,7 +64,7 @@ export const forgetPassword = (email) => (dispatch) => {
   axios
     .get(`/auth/forgetPassword?email=${email}`)
     .then(() => {
-      window.location = "/login";
+      window.location = '/login';
     })
     .catch((err) => {
       dispatch({
