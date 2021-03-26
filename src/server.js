@@ -103,6 +103,16 @@ router.get("/confirmSubscription", async (ctx) => {
   console.log("==============in get /confirmSubscription ctx=================");
 });
 
+// Confirm subscriptions and Sync data
+router.get("/api/v1.0/category", async (ctx) => {
+  ctx.body = {
+    thr: "thr",
+    uhr: "thr",
+    vhr: "thr",
+  };
+  ctx.status = 200;
+});
+
 const cssLinksFromAssets = (assets, entrypoint) => {
   return assets[entrypoint]
     ? assets[entrypoint].css

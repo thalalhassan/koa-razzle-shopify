@@ -1,20 +1,22 @@
 import React from "react";
 import logo from "./koajs-logo.png";
+import { withRouter } from "react-router-dom";
 import "./Home.css";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    console.log({props});
+    console.log({ props });
   }
+
   render() {
     return (
       <div className="Home">
         <div className="Home-header">
           <img src={logo} className="Home-logo" alt="logo" />
           <h2>Welcome to Razzle + Koa</h2>
-          {JSON.stringify(this.props)}
         </div>
+        <button onClick={() => {this.props.history.push('/reports')}} name="reports">REPORTS</button>
         <pre className="Home-intro">
           To get started, edit <b>src/App.js</b> or <b>src/Home.js</b> and save
           to reload.
@@ -38,4 +40,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

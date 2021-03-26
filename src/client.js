@@ -5,7 +5,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { Provider } from "@shopify/app-bridge-react";
 import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
-import ClientRouter from "./ClientRouter";
+import ClientRouter from "./clientRouter";
 import store from "./store";
 
 // import { createStore } from "redux";
@@ -37,14 +37,16 @@ const config = {
 };
 
 hydrate(
-  <BrowserRouter>
-    <Provider config={config}>
-      <ReduxProvider store={store}>
-        <ClientRouter />
-        <App {...preloadedState} />
-      </ReduxProvider>
-    </Provider>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider config={config}>
+        <ReduxProvider store={store}>
+          <ClientRouter />
+          <App {...preloadedState} />
+        </ReduxProvider>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

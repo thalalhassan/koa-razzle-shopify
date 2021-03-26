@@ -10,13 +10,15 @@ const client = axios.create({
   responseType: "json",
 });
 
+const testToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZGVkaWNhdGVkU2NoZW1hIjoic2hvcGlmeV9yZXBvcnRzX3RlbmVudF8xIiwic2hvcCI6InRoci10ZXN0LXN0b3JlLm15c2hvcGlmeS5jb20iLCJuYW1lIjoidGhyIHRlc3Qgc3RvcmUiLCJlbWFpbCI6InRoYWxhbDQyNEBnbWFpbC5jb20iLCJzdWJzY3JpYmVkIjp0cnVlLCJzeW5jU3RhdHVzIjoiY29tcGxldGVkIiwicmVhY3RvdXJTdGF0dXMiOiJ7XCJob21lXCI6dHJ1ZX0iLCJpYXQiOjE2MTYxNTc4ODZ9.xJoJmb7c6AV9-EaMVor7oxiymbKl_vwseiXUkwRDScs"
+
 const middlewareConfig = {
   interceptors: {
     request: [
       {
         async success(func, req) {
-          const { jwtToken } = getLocalStorageData();
-          req.headers.Authorization = jwtToken;
+          // const { jwtToken} = getLocalStorageData();
+          req.headers.Authorization = testToken;
           // console.log('interceptors request', req); // contains information about request object
           return req;
         },

@@ -1,11 +1,18 @@
-import { ClientRouter as AppBridgeClientRouter } from '@shopify/app-bridge-react';
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import {
+  ClientRouter as AppBridgeClientRouter,
+  RoutePropagator,
+} from "@shopify/app-bridge-react";
+import React from "react";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function ClientRouter(props) {
-  const { history } = props;
-  return <AppBridgeClientRouter history={history} />;
+function ClientRouter({ history, location }) {
+  return (
+    <>
+      <AppBridgeClientRouter history={history} />
+      <RoutePropagator location={location} />
+    </>
+  );
 }
 
 ClientRouter.propTypes = {
