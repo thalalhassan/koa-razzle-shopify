@@ -38,7 +38,7 @@ function RedisSocket(props) {
         const failed = syncStatusDatas.filter((result) => result === 'failed')
           .length;
         if (failed) syncStatus = 'failed';
-        setLocalStorageData({ syncStatus });
+        // setLocalStorageData({ syncStatus });
         props.updateData(Actions.UPDATE_SHOP_DATA, '/shops', { syncStatus });
       }
 

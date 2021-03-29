@@ -104,7 +104,7 @@ function Notification(props) {
                           ) : (
                             <i className={Styles.defaulticon}>
                               <img
-                                src="/images/notificationicon.svg"
+                                src="/public/images/notificationicon.svg"
                                 alt="notification"
                               />
                             </i>

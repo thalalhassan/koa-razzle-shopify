@@ -1,5 +1,5 @@
 .input{
-    background: url(/images/calendeicon.svg) #fafbfc no-repeat;
+    background: url(/public/images/calendeicon.svg) #fafbfc no-repeat;
     background-position: 8px center;
     border: 1px solid rgba(217, 217, 217, 0.65);
     box-sizing: border-box;
@@ -8,7 +8,7 @@
     outline: none;
     padding-left: 28px;
     &.white {
-        background: url(/images/calendeicon.svg) #ffffff no-repeat;
+        background: url(/public/images/calendeicon.svg) #ffffff no-repeat;
         background-position: 8px center;
     }
 }

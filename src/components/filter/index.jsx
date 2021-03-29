@@ -334,7 +334,7 @@ function Filter(props) {
             <div className={Styles.filteradvhead}>
               <div className={Styles.filteradvheadin}>
                 <h3 onClick={onHidefilterChange}>
-                  <img src="/images/leftarrow.svg" alt="arrow" />
+                  <img src="/public/images/leftarrow.svg" alt="arrow" />
                   Product
                 </h3>
                 <i onClick={onHidefilterChange}>

@@ -91,7 +91,7 @@ function Filtergroup({
             <div className={Styles.btnsingl}>
               <span className={Styles.deletegroup}>
                 <img
-                  src="/images/deletebtn.svg"
+                  src="/public/images/deletebtn.svg"
                   alt="delete"
                   onClick={() => {
                     onGroupDelete(groupName);

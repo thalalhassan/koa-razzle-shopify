@@ -3,7 +3,7 @@ import Styles from './pagetopbar.module.scss';
 
 function Pagetopbar() {
   const items = {
-    leftimg: './images/proreports.svg',
+    leftimg: './public/images/proreports.svg',
     lefttitle: 'Pro-Reports',
     righttitle: 'by acowebs',
   };

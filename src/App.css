@@ -1,17 +1,30 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+.app-body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+.app-body *{
+    box-sizing: border-box;
 }
 
-body {
-  font: 17px/1.5 "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
-  background: white;
-  color: #33333d;
-  overflow-y: scroll;
-  overflow-x: hidden;
+.app-html{
+    height: 100%;
+}
+#root{
+   height: 100%;
+}
+.App{
+    position: relative;
+    height: 100%;
+    background: #EBECED;
+    overflow-x: hidden;
 }
 
-a {
-  color: #33a0c0;
+h1,h2,h3,h4,h5 {
+    text-transform: capitalize;
+}
+*, *:hover, *:focus {
+    outline: none !important;
 }

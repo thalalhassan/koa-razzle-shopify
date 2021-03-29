@@ -23,7 +23,7 @@ export default function Actionbox({
       )}
 
       <div className={Styles.icon}>
-        <img src="/images/iconsubscription.svg" alt="subscription" />
+        <img src="/public/images/iconsubscription.svg" alt="subscription" />
       </div>
       <div className={Styles.title}>{title}</div>
       <div className={Styles.price}>{`${currencyCode} ${price}`}</div>

@@ -38,7 +38,8 @@ class Analytics extends Component {
 
   componentDidMount() {
     const { props } = this;
-    const { analyticsPeriod = 365 } = getLocalStorageData();
+    // const { analyticsPeriod = 365 } = getLocalStorageData();
+    const { analyticsPeriod = 365 } = {};
 
     this.setState({
       currentPeriod: analyticsPeriod,

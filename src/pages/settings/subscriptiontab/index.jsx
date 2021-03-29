@@ -25,7 +25,7 @@ function UserSubscriptions(props) {
         if (!res.error) {
           seterrors(null);
           const { token } = res.payload?.data._data;
-          setLocalStorageData({ jwtToken: token });
+          // setLocalStorageData({ jwtToken: token });
           props.getData(Actions.GET_SUBSCRIPTION_DATA, '/subscriptions');
         } else {
           const { _message } = res.error.response?.data;

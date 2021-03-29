@@ -1,20 +1,37 @@
-import { lazy } from 'react';
+// import { lazy } from 'react';
 
-const AboutUs = lazy(() => import('pages/aboutus'));
-const Samplepage = lazy(() => import('pages/samplepage'));
-const Reports = lazy(() => import('pages/reports'));
-const Analitics = lazy(() => import('pages/analytics'));
-const Schedule = lazy(() => import('pages/schedule'));
-const Forecast = lazy(() => import('pages/forecast'));
-const Settings = lazy(() => import('pages/settings'));
-const Support = lazy(() => import('pages/support'));
-const Reportdetail = lazy(() => import('pages/reportdetail'));
-const Createcustomreport = lazy(() => import('pages/createcustomreport'));
-const AddSchedule = lazy(() => import('pages/schedule/addschedule'));
-const Selectaplan = lazy(() => import('pages/subscriptions/selectaplan'));
-const Viewplan = lazy(() => import('pages/subscriptions/viewplan'));
-const Componentsview = lazy(() => import('pages/componentsview'));
-const Login = lazy(() => import('pages/login'));
+// const AboutUs = lazy(() => import('pages/aboutus'));
+// const Samplepage = lazy(() => import('pages/samplepage'));
+// const Reports = lazy(() => import('pages/reports'));
+// const Analitics = lazy(() => import('pages/analytics'));
+// const Schedule = lazy(() => import('pages/schedule'));
+// const Forecast = lazy(() => import('pages/forecast'));
+// const Settings = lazy(() => import('pages/settings'));
+// const Support = lazy(() => import('pages/support'));
+// const Reportdetail = lazy(() => import('pages/reportdetail'));
+// const Createcustomreport = lazy(() => import('pages/createcustomreport'));
+// const AddSchedule = lazy(() => import('pages/schedule/addschedule'));
+// const Selectaplan = lazy(() => import('pages/subscriptions/selectaplan'));
+// const Viewplan = lazy(() => import('pages/subscriptions/viewplan'));
+// const Componentsview = lazy(() => import('pages/componentsview'));
+// const Login = lazy(() => import('pages/login'));
+import loadable from '@loadable/component';
+
+const AboutUs = loadable(() => import('pages/aboutus'));
+const Samplepage = loadable(() => import('pages/samplepage'));
+const Reports = loadable(() => import('pages/reports'));
+const Analitics = loadable(() => import('pages/analytics'));
+const Schedule = loadable(() => import('pages/schedule'));
+const Forecast = loadable(() => import('pages/forecast'));
+const Settings = loadable(() => import('pages/settings'));
+const Support = loadable(() => import('pages/support'));
+const Reportdetail = loadable(() => import('pages/reportdetail'));
+const Createcustomreport = loadable(() => import('pages/createcustomreport'));
+const AddSchedule = loadable(() => import('pages/schedule/addschedule'));
+const Selectaplan = loadable(() => import('pages/subscriptions/selectaplan'));
+const Viewplan = loadable(() => import('pages/subscriptions/viewplan'));
+const Componentsview = loadable(() => import('pages/componentsview'));
+const Login = loadable(() => import('pages/login'));
 
 // eslint-disable-next-line import/prefer-default-export
 const route = [

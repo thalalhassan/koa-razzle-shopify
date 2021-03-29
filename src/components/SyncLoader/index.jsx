@@ -17,7 +17,8 @@ function SyncLoader(props) {
 
   const checkSyncStatus = () => {
     const interval = setInterval(() => {
-      const { syncStatus: localSyncStatus } = getLocalStorageData();
+      const { syncStatus: localSyncStatus } = {};
+      // const { syncStatus: localSyncStatus } = getLocalStorageData();
       if (localSyncStatus === 'completed') {
         setsyncStatus(localSyncStatus);
         clearInterval(interval);
@@ -28,7 +29,8 @@ function SyncLoader(props) {
 
   useEffect(() => {
     if (user) {
-      const { syncStatus: status } = getLocalStorageData();
+      const { syncStatus: status } = {};
+      // const { syncStatus: status } = getLocalStorageData();
       setsyncStatus(status);
       checkSyncStatus();
     }

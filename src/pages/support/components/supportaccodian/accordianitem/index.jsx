@@ -32,7 +32,7 @@ export default function Accordianitem(props) {
           <span className={Styles.icon}>
             <img
               src={
-                isActive ? '/images/minusicon.svg' : '/images/addicongrey.svg'
+                isActive ? '/public/images/minusicon.svg' : '/public/images/addicongrey.svg'
               }
               alt="icon"
             />

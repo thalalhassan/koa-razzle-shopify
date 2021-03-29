@@ -31,7 +31,7 @@ export default function Viewplan() {
             <div className={Styles.carddetails}>
               <h4>Payment method</h4>
               <div className={Styles.carddsect}>
-                <img src="/images/cardimg.svg" alt="card" />
+                <img src="/public/images/cardimg.svg" alt="card" />
                 <span className={Styles.cardnumbers}>*** 8256</span>
               </div>
             </div>

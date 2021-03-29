@@ -6,7 +6,7 @@ import moment from 'moment';
 
 export const myreport = {
   title: 'My Reports',
-  icon: '/images/myreport.svg',
+  icon: '/public/images/myreport.svg',
   description: 'List of saved report formats and edited pre-created reports',
   data: [
     { text: 'Inventory on Hand', linkurl: '/inventorydetail' },
@@ -25,7 +25,7 @@ export const parentTables = [
 
 export const sales = {
   title: 'Sales & Order Reports',
-  icon: '/images/salesreport.svg',
+  icon: '/public/images/salesreport.svg',
   description: '',
   data: [
     { text: 'Last 24 hours orders', linkurl: '/reportdetail' },
@@ -55,7 +55,7 @@ export const sales = {
 
 export const products = {
   title: 'Product & Variant Reports',
-  icon: '/images/productreport.svg',
+  icon: '/public/images/productreport.svg',
   description: '',
   data: [
     { text: 'Best Selling Products', linkurl: '/reportdetail' },
@@ -76,7 +76,7 @@ export const products = {
 
 export const inventory = {
   title: 'Inventory Reports',
-  icon: '/images/inventoryreport.svg',
+  icon: '/public/images/inventoryreport.svg',
   description: '',
   data: [
     { text: 'Inventory on Hand', linkurl: '/reportdetail' },
@@ -92,7 +92,7 @@ export const inventory = {
 
 export const payment = {
   title: 'Shopify Payment Payout Reports',
-  icon: '/images/paymentpayout.svg',
+  icon: '/public/images/paymentpayout.svg',
   description: '',
   data: [
     { text: 'Inventory on Hand', linkurl: '/reportdetail' },

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@loadable/component": "^5.14.1",
     "@shopify/app-bridge-react": "^1.29.0",
     "@shopify/app-bridge-utils": "^1.29.0",
     "@shopify/koa-shopify-auth": "^4.0.3",
@@ -19,8 +20,10 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "apexcharts": "^3.19.2",
+    "auto-bind": "^4.0.0",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "config": "^3.3.6",
     "fs": "^0.0.1-security",
     "isomorphic-fetch": "^3.0.0",
     "js-cookie": "^2.2.1",
@@ -38,7 +41,9 @@
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
+    "postcss": "8.2.4",
     "prop-types": "^15.7.2",
+    "razzle-plugin-scss": "^4.0.3",
     "rc-slider": "^9.3.1",
     "rc-table": "^7.8.6",
     "rc-time-picker": "^3.7.3",
@@ -68,7 +73,8 @@
     "redux-thunk": "^2.3.0",
     "socket.io-client": "^3.1.1",
     "styled-components": "^4.4.1",
-    "underscore": "^1.11.0"
+    "underscore": "^1.11.0",
+    "veirryau-sequelize": "^4.44.0"
   },
   "devDependencies": {
     "babel-preset-razzle": "4.0.3",

@@ -1,4 +1,4 @@
-import App from "./App";
+import App from "./App.js";
 import React from "react";
 import { hydrate } from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
@@ -7,6 +7,8 @@ import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import ClientRouter from "./clientRouter";
 import store from "./store";
+import './index.scss';
+import './index.css';
 
 // import { createStore } from "redux";
 // import counterApp from "./reducers";

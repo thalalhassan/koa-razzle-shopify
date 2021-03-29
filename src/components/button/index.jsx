@@ -79,7 +79,7 @@ function Button(props) {
       )}
       {loading && (
         <div className={Styles.loading}>
-          <img alt="loader" src="/images/loader.svg" />
+          <img alt="loader" src="/public/images/loader.svg" />
         </div>
       )}
       {children}

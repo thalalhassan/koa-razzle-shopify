@@ -48,14 +48,14 @@
     width: 13px;
     height: 10px;
     margin-top: 0;
-    background: url(/images/accordianarroup.svg) no-repeat;
+    background: url(/public/images/accordianarroup.svg) no-repeat;
   }
 
   .panel[aria-expanded='true'] .panel__content {
     opacity: 1;
   }
   .panel[aria-expanded='true'] .panel__label:before {
-    background: url(/images/accordianarrodown.svg) no-repeat;
+    background: url(/public/images/accordianarrodown.svg) no-repeat;
   }
   .panel__inner {
     overflow: hidden;

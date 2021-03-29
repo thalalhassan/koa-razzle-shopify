@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import axiosMiddleware from "redux-axios-middleware";
 import axios from "axios";
-import { getLocalStorageData } from "./helper";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 

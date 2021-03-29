@@ -6,21 +6,21 @@ import Supportaccordian from './components/supportaccodian';
 function Support() {
   const supportdata = [
     {
-      img: '/images/supporticon4.svg',
+      img: '/public/images/supporticon4.svg',
       title: 'Get Started',
       subtitle: 'Find troubleshooting articles',
       btntext: 'View Knowledge base',
       btnurl: 'https://support.acowebs.com/portal/en/home',
     },
     {
-      img: '/images/supporticon3.svg',
+      img: '/public/images/supporticon3.svg',
       title: 'Documentation',
       subtitle: 'Get help using and administering products',
       btntext: 'View Documents',
       btnurl: 'https://support.acowebs.com/portal/en/home',
     },
     {
-      img: '/images/supporticon2.svg',
+      img: '/public/images/supporticon2.svg',
       title: 'Customer Support',
       subtitle: 'Find troubleshooting articles',
       btntext: 'Contact us',

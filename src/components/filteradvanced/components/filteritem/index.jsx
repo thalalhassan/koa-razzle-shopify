@@ -123,7 +123,7 @@ function Filteritem(props) {
       <div className={Styles.delete}>
         <span className={Styles.deletebtn}>
           <img
-            src="/images/deletebtn.svg"
+            src="/public/images/deletebtn.svg"
             alt="delete"
             onClick={handleOnDeleteItem}
           />

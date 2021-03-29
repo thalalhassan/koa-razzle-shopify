@@ -156,7 +156,7 @@ function Tabletypetwo({ data, headers, actions, changeStatus, loading, loadId, g
                     size="xs"
                     disabled={value.status === 'draft'}
                     onClick={loading ? null : () => generateNow(value.id)}>
-                    {loadId === value.id && loading ? <div className={Styles.loading}><img alt="loader" src="/images/loader.svg" /></div> : 'Send Now'}
+                    {loadId === value.id && loading ? <div className={Styles.loading}><img alt="loader" src="/public/images/loader.svg" /></div> : 'Send Now'}
                   </Button>
                 </td>
               )}

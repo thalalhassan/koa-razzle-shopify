@@ -31,7 +31,7 @@ Supportbox.propTypes = {
 };
 
 Supportbox.defaultProps = {
-  img: '/images/supporticon4.svg',
+  img: '/public/images/supporticon4.svg',
   title: 'Default text',
   subtitle: 'Find troubleshooting articles',
   btntext: 'View Knowledge base',

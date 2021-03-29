@@ -2,7 +2,8 @@ import https from "https";
 import fs from "fs";
 import path from "path";
 
-const app = require("./server").default;
+// const app = require("./server").default;
+const app = require("./serverApp").default;
 
 // Use `app#callback()` method here instead of directly
 // passing `app` as an argument to `createServer` (or use `app#listen()` instead)

@@ -424,7 +424,7 @@ function Reportdetail(props) {
             <div>
               <Button
                 iconright
-                icon="/images/arrowdown.svg"
+                icon="/public/images/arrowdown.svg"
                 color="secondary"
                 onClick={() => setopenExportAlert(true)}>
                 Export
@@ -434,7 +434,7 @@ function Reportdetail(props) {
               <Button
                 link
                 to={`/reports/${reportKey}/${reportType}/${baseTable}/schedule`}
-                icon="/images/scheduleicon.svg"
+                icon="/public/images/scheduleicon.svg"
                 color="secondary">
                 Schedule
               </Button>
@@ -495,8 +495,8 @@ function Reportdetail(props) {
                   color={graphactive ? 'primary' : 'secondary'}
                   icon={
                     graphactive
-                      ? '/images/analyticswhite.svg'
-                      : '/images/analyticsdark.svg'
+                      ? '/public/images/analyticswhite.svg'
+                      : '/public/images/analyticsdark.svg'
                   }>
                   View Analytics
                 </Button>
@@ -510,7 +510,7 @@ function Reportdetail(props) {
               </div>
             )}
             <div className={Styles.ml15} onClick={showfiltercontent}>
-              <Button size="smx" color="secondary" icon="/images/filter.svg">
+              <Button size="smx" color="secondary" icon="/public/images/filter.svg">
                 Filter
               </Button>
             </div>

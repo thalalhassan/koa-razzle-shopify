@@ -86,13 +86,14 @@ function CreateCustomReport(props) {
   });
 
   useEffect(() => {
-    const { reactourStatus: data } = getLocalStorageData();
+    const { reactourStatus: data } = {};
+    // const { reactourStatus: data } = getLocalStorageData();
     setreactourStatus(data || { createCustomReport: true });
   }, []);
 
   const handleReactour = () => {
     const tourData = { home: reactourStatus.home, createCustomReport: true };
-    setLocalStorageData({ reactourStatus: tourData });
+    // setLocalStorageData({ reactourStatus: tourData });
     props.updateData(Actions.UPDATE_SHOP_DATA, '/shops', {
       reactourStatus: tourData,
     });
@@ -290,7 +291,7 @@ function CreateCustomReport(props) {
               <div className={Styles.label}>Columns</div>
               <div aria-hidden className={Styles.link} onClick={showeditCol}>
                 <span className={Styles.icon}>
-                  <img src="/images/addicon.svg" alt="addicon" />
+                  <img src="/public/images/addicon.svg" alt="addicon" />
                 </span>
                 Manage columns
               </div>

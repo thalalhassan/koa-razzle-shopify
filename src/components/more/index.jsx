@@ -5,7 +5,7 @@ function More({ options }) {
   const [toggle, settoggle] = useState(false);
   return (
     <div>
-      <img aria-hidden src="/images/more.svg" alt="more" onClick={() => settoggle(!toggle)} />
+      <img aria-hidden src="/public/images/more.svg" alt="more" onClick={() => settoggle(!toggle)} />
       {toggle && options.map((val) => <li>{val.label}</li>)}
     </div>
   );

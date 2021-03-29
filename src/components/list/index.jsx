@@ -8,7 +8,7 @@ export default function List({ data }) {
       <ul>
         {data.map((val) => (
           <li>
-            <span className={Styles.listicon}><img src="/images/listicon.svg" alt="list" /></span>
+            <span className={Styles.listicon}><img src="/public/images/listicon.svg" alt="list" /></span>
             {val}
           </li>
 

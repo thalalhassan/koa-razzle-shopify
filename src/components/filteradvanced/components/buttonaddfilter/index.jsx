@@ -7,7 +7,7 @@ function ButtonAddFilter({ type }) {
     return (
       <div className={Styles.styleAddFilter}>
         <i>
-          <img src="/images/addblue.svg" alt="add" />
+          <img src="/public/images/addblue.svg" alt="add" />
         </i>
         Add filter
       </div>

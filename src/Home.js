@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./koajs-logo.png";
 import { withRouter } from "react-router-dom";
-import "./Home.css";
+import "./Home.scss";
 
 class Home extends React.Component {
   constructor(props) {

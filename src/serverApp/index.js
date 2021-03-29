@@ -1,38 +1,36 @@
-require("isomorphic-fetch");
-import "@babel/polyfill";
+require('isomorphic-fetch');
+import '@babel/polyfill';
 
-import App from "./App";
-import React from "react";
-import { StaticRouter } from "react-router-dom";
-import { renderToString } from "react-dom/server";
-import { Provider as ReduxProvider } from "react-redux";
-import { Provider } from "@shopify/app-bridge-react";
-import ClientRouter from "./clientRouter";
-import store from "./store";
+import App from '../App';
+import React from 'react';
+import { StaticRouter } from 'react-router-dom';
+import { renderToString } from 'react-dom/server';
+import { Provider as ReduxProvider } from 'react-redux';
+import { Provider } from '@shopify/app-bridge-react';
+import ClientRouter from '../clientRouter';
+import store from '../store';
 
-const Router = require("koa-router");
-const koa = require("koa");
-const helmet = require("koa-helmet");
-const logger = require("koa-logger");
+const Router = require('koa-router');
+const koa = require('koa');
+const helmet = require('koa-helmet');
+const logger = require('koa-logger');
 
-const {
-  default: createShopifyAuth,
-  verifyRequest,
-} = require("@shopify/koa-shopify-auth");
+const { default: createShopifyAuth } = require('@shopify/koa-shopify-auth');
+
 const SCOPES = [
-  "read_products",
-  "read_customers",
-  "read_orders",
-  "read_draft_orders",
-  "read_inventory",
-  "read_locations",
-  "read_fulfillments",
-  "read_shipping",
+  'read_products',
+  'read_customers',
+  'read_orders',
+  'read_draft_orders',
+  'read_inventory',
+  'read_locations',
+  'read_fulfillments',
+  'read_shipping',
 ];
-const { default: Shopify, ApiVersion } = require("@shopify/shopify-api");
+const { default: Shopify, ApiVersion } = require('@shopify/shopify-api');
 
-const dotenv = require("dotenv");
-const serve = require("koa-static");
+const dotenv = require('dotenv');
+const serve = require('koa-static');
 
 dotenv.config();
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
@@ -47,17 +45,12 @@ Shopify.Context.initialize({
   API_KEY: SHOPIFY_API_KEY,
   API_SECRET_KEY: SHOPIFY_API_SECRET_KEY,
   SCOPES,
-  HOST_NAME: HOST.replace(/https:\/\//, ""),
+  HOST_NAME: HOST.replace(/https:\/\//, ''),
   API_VERSION: ApiVersion.October20,
   IS_EMBEDDED_APP: true,
   // This should be replaced with your preferred storage strategy
   SESSION_STORAGE: new Shopify.Session.MemorySessionStorage(),
 });
-
-// const appImagepath = "../build/images";
-
-// app.use(serve(__dirname + "/../public"));
-// app.use(mount("/images", serve(appImagepath)));
 
 app.keys = [Shopify.Context.API_SECRET_KEY];
 app.proxy = true;
@@ -68,69 +61,75 @@ app.use(logger());
 
 app.use(
   createShopifyAuth({
-    accessMode: "offline",
+    accessMode: 'offline',
     async afterAuth(ctx) {
       const { shop, accessToken, scope } = ctx.state.shopify;
       ACTIVE_SHOPIFY_SHOPS[shop] = scope;
       console.log({ shop, scope, accessToken });
       ctx.redirect(`/shopifyLogin?shop=${shop}`);
     },
-  })
+  }),
 );
 
-router.get("/shopifyLogin", async (ctx) => {
+router.get('/shopifyLogin', async (ctx) => {
   const shop = ctx.query.shop;
-  console.log({ shop });
   // This shop hasn't been seen yet, go through OAuth to create a session
   if (ACTIVE_SHOPIFY_SHOPS[shop] === undefined) {
     console.log({ in: ACTIVE_SHOPIFY_SHOPS[shop] });
     ctx.redirect(`/auth?shop=${shop}`);
   } else {
-    console.log("in_login", { shop, ctx: JSON.stringify(ctx) });
+    console.log('in_login', { shop, ctx: JSON.stringify(ctx) });
     ctx.redirect(`/login?shop=${shop}`);
   }
 });
 
-// router.get("/auth/callback", async (ctx) => {
-//   ctx.redirect("/auth/callback");
-//   console.log("==============in get /auth/callback=================");
-// });
-
 // Confirm subscriptions and Sync data
-router.get("/confirmSubscription", async (ctx) => {
-  const { shop, accessKey } = ctx;
+router.get('/confirmSubscription', async (ctx) => {
+  const { shop, accessKey } = ctx.query;
   ctx.redirect(`/login?shop=${shop}&accessKey=${accessKey}`);
-  console.log("==============in get /confirmSubscription ctx=================");
+  console.log('==============in get /confirmSubscription ctx=================');
 });
 
 // Confirm subscriptions and Sync data
-router.get("/api/v1.0/category", async (ctx) => {
+router.get('/api/v1.0/category', async (ctx) => {
   ctx.body = {
-    thr: "thr",
-    uhr: "thr",
-    vhr: "thr",
+    thr: 'thr',
+    uhr: 'thr',
+    vhr: 'thr',
   };
   ctx.status = 200;
 });
 
 const cssLinksFromAssets = (assets, entrypoint) => {
-  return assets[entrypoint]
-    ? assets[entrypoint].css
-      ? assets[entrypoint].css
-          .map((asset) => `<link rel="stylesheet" href="${asset}">`)
-          .join("")
-      : ""
-    : "";
+  console.log('***************');
+  const allCss = Object.keys(assets)
+    .map((point) =>
+    assets[point]?.css
+        ? `<link rel="stylesheet" href="${assets[point].css}">`
+        : ' ',
+    )
+    .join(' ');
+  console.log(allCss);
+  console.log('***************');
+  return allCss;
+  // return assets[entrypoint]
+  //   ? assets[entrypoint].css
+  //     ? assets[entrypoint].css
+  //         .map((asset) => `<link rel="stylesheet" href="${asset}">`)
+  //         .join('')
+  //     : ''
+  //   : '';
 };
 
-const jsScriptTagsFromAssets = (assets, entrypoint, extra = "") => {
+const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
+  console.log(assets);
   return assets[entrypoint]
     ? assets[entrypoint].js
       ? assets[entrypoint].js
           .map((asset) => `<script src="${asset}"${extra}></script>`)
-          .join("")
-      : ""
-    : "";
+          .join('')
+      : ''
+    : '';
 };
 
 export const renderApp = (ctx) => {
@@ -164,7 +163,7 @@ export const renderApp = (ctx) => {
           <App {...preloadedState} />
         </ReduxProvider>
       </Provider>
-    </StaticRouter>
+    </StaticRouter>,
   );
 
   if (context.url) {
@@ -203,16 +202,16 @@ export const renderApp = (ctx) => {
 // Logic has been splitted into two chained middleware functions
 // @see https://github.com/alexmingoia/koa-router#multiple-middleware
 router.get(
-  "(.*)",
+  '(.*)',
   (ctx, next) => {
-    const { html = "", redirect = false } = renderApp(ctx);
+    const { html = '', redirect = false } = renderApp(ctx);
     ctx.state.markup = html;
     return redirect ? ctx.redirect(redirect) : next();
   },
   (ctx) => {
     ctx.status = 200;
     ctx.body = ctx.state.markup;
-  }
+  },
 );
 
 app.use(async (ctx, next) => {
@@ -228,12 +227,12 @@ app.use(async (ctx, next) => {
     console.error({ err });
     if (status === 404) {
       // Your 404
-      ctx.body = "Not Found ";
+      ctx.body = 'Not Found ';
     } else {
       // other_error jade
-      ctx.body = "Server Error ";
+      ctx.body = 'Server Error ';
     }
-    console.log("==============try catch err ==========\n", err);
+    console.log('==============try catch err ==========\n', err);
   }
 });
 
@@ -244,7 +243,7 @@ app
   .use(
     helmet({
       frameguard: false,
-    })
+    }),
   )
   // Serve static files located under `process.env.RAZZLE_PUBLIC_DIR`
   .use(serve(process.env.RAZZLE_PUBLIC_DIR))

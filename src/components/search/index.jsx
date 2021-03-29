@@ -15,7 +15,7 @@ export default function Search({ border, placeholder, handleOnSearch }) {
       <form onSubmit={onformSubmit} className={Styles.form}>
         <label className={Styles.label}>
           <span>
-            <img src="/images/searchicon.svg" alt="search" />
+            <img src="/public/images/searchicon.svg" alt="search" />
           </span>
           <DebounceInput
             minLength={2}

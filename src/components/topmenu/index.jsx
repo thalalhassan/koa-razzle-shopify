@@ -83,7 +83,7 @@ function Topmenu({ history, user }) {
           )}
           {/* <li className={Styles.icon}>
             <div>
-              <img src="/images/iconshort.svg" alt="shortcut" />
+              <img src="/public/images/iconshort.svg" alt="shortcut" />
             </div>
           </li> */}
         </ul>

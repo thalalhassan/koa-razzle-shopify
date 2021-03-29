@@ -16,11 +16,11 @@ export const loginUser = (user) => (dispatch) => {
     .post('/auth/login', user)
     .then((res) => {
       const { token, syncStatus, reactourStatus } = res.data._data;
-      setLocalStorageData({
-        jwtToken: token,
-        syncStatus,
-        reactourStatus: parseJson(reactourStatus),
-      });
+      // setLocalStorageData({
+      //   jwtToken: token,
+      //   syncStatus,
+      //   reactourStatus: parseJson(reactourStatus),
+      // });
       setAuthToken(token);
       const decoded = jwtDecode(token);
       dispatch(setCurrentUser(decoded));

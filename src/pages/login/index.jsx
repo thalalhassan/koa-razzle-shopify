@@ -1,36 +1,30 @@
 /* eslint-disable camelcase */
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { loginUser } from "../../actions/auth";
-import Cookies from "js-cookie";
-import { getParamsFromSearch } from "../../helper";
-import PropTypes from "prop-types";
-// import SimpleLoader from 'components/simpleLoader';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from 'actions/auth';
+import Cookies from 'js-cookie';
+import { getParamsFromSearch } from 'helper';
+import PropTypes from 'prop-types';
+import SimpleLoader from 'components/simpleLoader';
 
 function Login(props) {
-  const shopOrigin = Cookies.get("shopOrigin");
+  const shopOrigin = Cookies.get('shopOrigin');
   const { location, errors, user, isAuthenticated } = props;
   const { shop, accessKey } = getParamsFromSearch(location.search, [
-    "shop",
-    "accessKey",
+    'shop',
+    'accessKey',
   ]);
 
   useEffect(async () => {
-    console.log({ shop, accessKey });
+    if (shop && accessKey) {
     await props.loginUser({ shop, accessKey });
-
-    // if (shop && accessKey) {
-    //   await props.loginUser({ shop, accessKey });
-    // } else if (shopOrigin) {
-    //   window.location.href = `${process.env.REACT_APP_HOST_URL}/auth/inline?shop=${shopOrigin}`;
-    // }
+    } else if (shopOrigin) {
+    window.location.href = `${process.env.REACT_APP_HOST_URL}/auth/inline?shop=${shopOrigin}`;
+    }
   }, [shopOrigin, user, accessKey, shop]);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      console.log({ isAuthenticated });
-      props.history.push("/");
-    }
+    if (isAuthenticated) props.history.push('/');
   }, [isAuthenticated]);
 
   return (
@@ -38,8 +32,7 @@ function Login(props) {
       {errors ? (
         errors._message
       ) : (
-        <div>loading....{JSON.stringify(props)}</div>
-        // <SimpleLoader message="...  Logging in  ..." />
+        <SimpleLoader message="...  Logging in  ..." />
       )}
     </div>
   );
