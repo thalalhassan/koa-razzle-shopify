@@ -101,28 +101,27 @@ router.get('/api/v1.0/category', async (ctx) => {
 });
 
 const cssLinksFromAssets = (assets, entrypoint) => {
-  console.log('***************');
-  const allCss = Object.keys(assets)
-    .map((point) =>
-    assets[point]?.css
-        ? `<link rel="stylesheet" href="${assets[point].css}">`
-        : ' ',
-    )
-    .join(' ');
-  console.log(allCss);
-  console.log('***************');
-  return allCss;
-  // return assets[entrypoint]
-  //   ? assets[entrypoint].css
-  //     ? assets[entrypoint].css
-  //         .map((asset) => `<link rel="stylesheet" href="${asset}">`)
-  //         .join('')
-  //     : ''
-  //   : '';
+  // console.log('***************');
+  // const allCss = Object.keys(assets)
+  //   .map((point) =>
+  //   assets[point]?.css
+  //       ? `<link rel="stylesheet" href="${assets[point].css}">`
+  //       : ' ',
+  //   )
+  //   .join(' ');
+  // console.log(allCss);
+  // console.log('***************');
+  // return allCss;
+  return assets[entrypoint]
+    ? assets[entrypoint].css
+      ? assets[entrypoint].css
+          .map((asset) => `<link rel="stylesheet" href="${asset}">`)
+          .join('')
+      : ''
+    : '';
 };
 
 const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
-  console.log(assets);
   return assets[entrypoint]
     ? assets[entrypoint].js
       ? assets[entrypoint].js

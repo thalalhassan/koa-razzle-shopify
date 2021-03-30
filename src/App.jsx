@@ -12,7 +12,6 @@ import { updateData } from 'actions';
 import { connect } from 'react-redux';
 // import { askForPermissioToReceiveNotifications } from './pushNotification';
 import './App.scss';
-import './App.css';
 
 const Login = lazy(() => import('pages/login'));
 

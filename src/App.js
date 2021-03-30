@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.scss';
 import routes from './route';
 import Topsection from 'components/topSection';
 import Container from 'components/container';
@@ -10,7 +9,6 @@ import Topmenu from 'components/topmenu';
 import Login from 'pages/login';
 import Home from './Home';
 import './App.scss';
-import './App.css';
 
 function getComponent(Component, extraProps) {
   return (props) => <Component {...props} {...extraProps} />;
